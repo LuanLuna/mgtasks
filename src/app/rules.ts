@@ -19,7 +19,13 @@ export let defineRules = (angularm: AngularmService) => {
         .detr('list_entities', CssListTableComponent)
         .dptr('table_header', TableHeaderComponent)
         .der('table_line', CellEntityLineComponent)
+
         .dpr('table_cell', TableCellComponent)
+        .pr('table_cell', '*', '*', 'integer', TableCellComponent, {propertyClass: "w3-center"})
+        .pr('table_cell', '*', '*', 'date', TableCellComponent, {propertyClass: "w3-center"})
+        .ptr('table_header', '*', '*', 'integer', TableHeaderComponent, {propertyClass: "w3-center"})
+        .ptr('table_header', '*', '*', 'date', TableHeaderComponent, {propertyClass: "w3-center"})
+
         .der('show_entity', EntityDetailsComponent)
         .detr('create_form', CreateEntityComponent)
         .der('edit_form', EditEntityFormComponent)
