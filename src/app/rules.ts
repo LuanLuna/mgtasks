@@ -6,9 +6,15 @@ import {
     ListingTableComponent
 } from 'angularm';
 
+import {
+    TextareaFormLineComponent
+} from './widgets/textarea.formline';
+
 export let defineRules = (angularm: AngularmService) => {
     angularm
         .dptr('form_line', FormLineComponent, { inputType: 'text' })
+        .ptr('form_line', '*', 'description', null, TextareaFormLineComponent, { rows: 8, cols: 50 })
+        .ptr('form_line', '*', 'summary', null, TextareaFormLineComponent, { rows: 5, cols: 50 })
         .dpr('show_line', ShowLineComponent)
         .detr('list_entities', ListingTableComponent)
         .der('table_line', EntityLineComponent)
